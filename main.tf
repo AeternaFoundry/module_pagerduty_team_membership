@@ -1,0 +1,8 @@
+resource "pagerduty_team_membership" "team_memberships" {
+  for_each = var.team_memberships
+
+  team_id = each.value.team_id
+  user_id = each.value.user_id
+  role    = each.value.role
+}
+
